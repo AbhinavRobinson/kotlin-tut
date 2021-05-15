@@ -25,12 +25,22 @@ fun main() {
     // Lists
     val shoppingList = mutableListOf("Laptop", "Mobile", "PC")
     shoppingList.add("Watch")
-    var index = 0
-    while(index < shoppingList.size) {
-        print(shoppingList[index]+",")
-        index++
-    }
     for (i in shoppingList) {
         println(i)
     }
+    val result: Int = loopWithWhile(shoppingList)
+}
+
+fun loopWithWhile(stringList: List<String> = listOf()): Int {
+    var index: Int = 0
+    while(index < stringList.size) {
+        print(stringList[index])
+        when(index) {
+            stringList.size - 2 -> print(" and ")
+            stringList.size - 1 -> print("")
+            else -> print(", ")
+        }
+        index++
+    }
+    return index
 }
