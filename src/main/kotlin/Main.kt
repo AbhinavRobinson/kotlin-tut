@@ -9,4 +9,12 @@ fun main() {
     // Different types can divide
     val z = y/x
     println("Z = $z")
+    println("STARS: ")
+    val input: Int = (readLine() ?: "0").toInt()
+    for (i in 0..input) {
+        for (j in 0..i) {
+            print("*")
+        }
+        println()
+    }
 }
