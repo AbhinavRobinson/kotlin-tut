@@ -13,9 +13,13 @@ fun main() {
 
     println("STARS: ")
     // Type safety + give default value if null, NULL safety
-    // val input: Int = (readLine() ?: "0").toInt()
+    val input: Int = try {
+        (readLine() ?: "0").toInt()
+    } catch (e: Exception) {
+        0
+    }
     // for loops :)
-    for (i in 0..3) {
+    for (i in 0..input) {
         for (j in 0..i) {
             print("*")
         }
@@ -35,6 +39,14 @@ fun main() {
 
     val cat = Cat()
     cat.makeSound()
+
+    // anonymous class
+    val bear = object : Animal("Bear") {
+        override fun makeSound() {
+            println("Roooar!");
+        }
+    }
+    bear.makeSound()
 }
 
 fun loopWithWhile(stringList: List<String> = listOf()): Int {
