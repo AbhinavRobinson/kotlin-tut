@@ -14,8 +14,10 @@ fun main() {
     println("STARS: ")
     // Type safety + give default value if null, NULL safety
     val input: Int = try {
+        // try to parse
         (readLine() ?: "0").toInt()
     } catch (e: Exception) {
+        // returned default value
         0
     }
     // for loops :)
@@ -47,6 +49,28 @@ fun main() {
         }
     }
     bear.makeSound()
+
+    // lambda functions
+    var count: Int = shoppingList.count {
+        item ->
+        item.isNotEmpty()
+    }
+
+    println("Shopping list has $count items")
+
+    count = shoppingList.customCount { item -> item.isNotEmpty() }
+    println("Shopping list has $count items (custom counter)")
+}
+
+// custom counter lambda function
+fun List<String>.customCount(function: (String) -> Boolean): Int {
+    var counter = 0
+    for (i in this) {
+        if(function(i)){
+            counter++
+        }
+    }
+    return counter
 }
 
 fun loopWithWhile(stringList: List<String> = listOf()): Int {
