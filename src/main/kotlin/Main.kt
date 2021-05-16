@@ -31,10 +31,10 @@ fun main() {
     val result: Int = loopWithWhile(shoppingList)
 
     val dog = Dog()
-    dog.bark()
+    dog.makeSound()
 
     val cat = Cat()
-    cat.meow()
+    cat.makeSound()
 }
 
 fun loopWithWhile(stringList: List<String> = listOf()): Int {

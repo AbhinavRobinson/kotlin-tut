@@ -1,5 +1,7 @@
 abstract class Animal(val name:String) {
     init {
-        println("Bringing a Good $name");
+        println("Bringing a Good $name")
     }
+
+    abstract fun makeSound()
 }
