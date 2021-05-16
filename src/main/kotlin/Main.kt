@@ -63,13 +63,12 @@ fun main() {
 }
 
 // custom counter lambda function
-fun List<String>.customCount(function: (String) -> Boolean): Int {
+// T is a Generic for any type, here String (now we can pass int list, string list ...)
+fun <T> List<T>.customCount(function: (T) -> Boolean): Int {
     var counter = 0
-    for (i in this) {
-        if(function(i)){
+    for (i in this)
+        if(function(i))
             counter++
-        }
-    }
     return counter
 }
 
