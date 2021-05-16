@@ -29,6 +29,12 @@ fun main() {
         println(i)
     }
     val result: Int = loopWithWhile(shoppingList)
+
+    val dog = Dog()
+    dog.bark()
+
+    val cat = Cat()
+    cat.meow()
 }
 
 fun loopWithWhile(stringList: List<String> = listOf()): Int {
@@ -42,5 +48,6 @@ fun loopWithWhile(stringList: List<String> = listOf()): Int {
         }
         index++
     }
+    print("\n");
     return index
 }
